@@ -1,21 +1,20 @@
-import React from 'react'
-import logo from '../assets/Logo.svg'
-import {Link} from 'react-router-dom'
-import toast from 'react-hot-toast';
+import React from "react";
+import logo from "../assets/Logo.svg";
+import { Link } from "react-router-dom";
+import toast from "react-hot-toast";
 
 function Navbar(props) {
-
   let isLoggedin = props.isLoggedin;
   let setIsLoggedin = props.setIsLoggedin;
 
   return (
-    <div className='flex justify-evenly'>
-      <Link to='/'>
-        <img src={logo} width={160} height={32} loading='lazy'/>
+    <div className="flex justify-between items-center w-11/12 max-w-[1160px] py-4 mx-auto">
+      <Link to="/">
+        <img src={logo} width={160} height={32} loading="lazy" />
       </Link>
 
       <nav>
-        <ul className='flex gap-3'>
+        <ul className="text-richblack-100 flex gap-x-6">
           <li>
             <Link to="/">Home</Link>
           </li>
@@ -28,36 +27,44 @@ function Navbar(props) {
         </ul>
       </nav>
 
-      <div className='flex ml-5 mr-3 gap-3'>
-        { !isLoggedin &&
+      <div className="flex items-center gap-x-4">
+        {!isLoggedin && (
           <Link to="/login">
-            <button>LogIn</button>
+            <button className="bg-richblack-800 text-richblack-100 py-[8px] px-[12px] rounded-[8px]border border-richblack-700">
+              Log in
+            </button>
           </Link>
-        }
-        { isLoggedin &&
+        )}
+        {isLoggedin && (
           <Link to="/">
-            <button onClick={()=>{
-              setIsLoggedin(false);
-              toast.success("Logged Out");
-            }}>
+            <button
+              className="bg-richblack-800 text-richblack-100 py-[8px] px-[12px] rounded-[8px]border border-richblack-700"
+              onClick={() => {
+                setIsLoggedin(false);
+                toast.success("Logged Out");
+              }}
+            >
               Log Out
             </button>
           </Link>
-        }
-        { !isLoggedin &&
+        )}
+        {!isLoggedin && (
           <Link to="/signup">
-            <button>SignUp</button>
+            <button className="bg-richblack-800 text-richblack-100 py-[8px] px-[12px] rounded-[8px]border border-richblack-700">
+              Sign up
+            </button>
           </Link>
-        }
-        { isLoggedin &&
+        )}
+        {isLoggedin && (
           <Link to="/dashboard">
-            <button>dashboard</button>
+            <button className="bg-richblack-800 text-richblack-100 py-[8px] px-[12px] rounded-[8px]border border-richblack-700">
+              dashboard
+            </button>
           </Link>
-        } 
+        )}
       </div>
-
     </div>
-  )
+  );
 }
 
-export default Navbar
+export default Navbar;

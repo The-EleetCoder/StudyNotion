@@ -13,7 +13,7 @@ function App() {
   const [isLoggedin, setIsLoggedin] = useState(false);
 
   return (
-    <div>
+    <div className="w-screen h-screen bg-richblack-900 flex flex-col" >
       <Navbar isLoggedin={isLoggedin} setIsLoggedin={setIsLoggedin} />
       <Routes>
         <Route path='/' element={<Home/>} />

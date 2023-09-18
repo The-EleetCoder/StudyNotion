@@ -4,8 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { toast } from "react-hot-toast";
 
-export const LoginForm = ({setIsLoggedIn}) => {
-
+export const LoginForm = ({ setIsLoggedIn }) => {
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
@@ -22,18 +21,21 @@ export const LoginForm = ({setIsLoggedIn}) => {
     }));
   };
 
-  function submitHandler(event){
+  function submitHandler(event) {
     event.preventDefault();
     setIsLoggedIn(true);
-    toast.success("Logged In")
+    toast.success("Logged In");
     navigate("/dashboard");
   }
 
   return (
-    <form onSubmit={submitHandler}>
-      <label>
-        <p>
-          Email Address<sup>*</sup>
+    <form
+      onSubmit={submitHandler}
+      className="flex flex-col w-full gap-y-4 mt-6"
+    >
+      <label className="w-full">
+        <p className="text-[0.875rem] text-richblack-5 mb-1 leading-[1.375rem]">
+          Email Address<sup className="text-pink-200">*</sup>
         </p>
         <input
           required
@@ -58,7 +60,7 @@ export const LoginForm = ({setIsLoggedIn}) => {
           name="password"
         />
         <span onClick={() => setShowPassword((prev) => !prev)}>
-          {showPassword ? <AiOutlineEyeInvisible/> : <AiOutlineEye/>}
+          {showPassword ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
         </span>
 
         <Link to="#">
