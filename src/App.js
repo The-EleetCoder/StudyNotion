@@ -10,15 +10,15 @@ import { useState } from "react";
 
 function App() {
 
-  const [isLoggedin, setIsLoggedin] = useState(false)
+  const [isLoggedin, setIsLoggedin] = useState(false);
 
   return (
     <div>
       <Navbar isLoggedin={isLoggedin} setIsLoggedin={setIsLoggedin} />
       <Routes>
         <Route path='/' element={<Home/>} />
-        <Route path='/login' element={<Login/>} />
-        <Route path='/signup' element={<Signup/>} />
+        <Route path='/login' element={<Login setIsLoggedIn={setIsLoggedin}/>} />
+        <Route path='/signup' element={<Signup setIsLoggedIn={setIsLoggedin} />} />
         <Route path='/dashboard' element={<Dashboard/>} />
       </Routes>
     </div>
