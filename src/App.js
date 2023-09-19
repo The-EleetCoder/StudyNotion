@@ -7,6 +7,7 @@ import Signup from "./pages/Signup"
 import Dashboard from "./pages/Dashboard"
 import Navbar from "./components/Navbar";
 import { useState } from "react";
+import  { PrivateRoute }  from "./components/PrivateRoute";
 
 function App() {
 
@@ -19,7 +20,11 @@ function App() {
         <Route path='/' element={<Home/>} />
         <Route path='/login' element={<Login setIsLoggedIn={setIsLoggedin}/>} />
         <Route path='/signup' element={<Signup setIsLoggedIn={setIsLoggedin} />} />
-        <Route path='/dashboard' element={<Dashboard/>} />
+        <Route path='/dashboard' element={
+          <PrivateRoute isLoggedin={isLoggedin}>
+            <Dashboard/>
+          </PrivateRoute>
+        } />
       </Routes>
     </div>
   )
