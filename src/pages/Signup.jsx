@@ -1,4 +1,4 @@
-import {Template} from "../components/Template";
+import { Template } from "../components/Template";
 import signupImg from "../assets/signup.png";
 
 function Signup({ setIsLoggedIn }) {

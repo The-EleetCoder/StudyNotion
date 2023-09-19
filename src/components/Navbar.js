@@ -30,7 +30,7 @@ function Navbar(props) {
       <div className="flex items-center gap-x-4">
         {!isLoggedin && (
           <Link to="/login">
-            <button className="bg-richblack-800 text-richblack-100 py-[8px] px-[12px] rounded-[8px]border border-richblack-700">
+            <button className="bg-richblack-800 text-richblack-100 py-[8px] px-[12px] rounded-[8px] border border-richblack-700">
               Log in
             </button>
           </Link>
@@ -38,7 +38,7 @@ function Navbar(props) {
         {isLoggedin && (
           <Link to="/">
             <button
-              className="bg-richblack-800 text-richblack-100 py-[8px] px-[12px] rounded-[8px]border border-richblack-700"
+              className="bg-richblack-800 text-richblack-100 py-[8px] px-[12px] rounded-[8px] border border-richblack-700"
               onClick={() => {
                 setIsLoggedin(false);
                 toast.success("Logged Out");
@@ -50,14 +50,14 @@ function Navbar(props) {
         )}
         {!isLoggedin && (
           <Link to="/signup">
-            <button className="bg-richblack-800 text-richblack-100 py-[8px] px-[12px] rounded-[8px]border border-richblack-700">
+            <button className="bg-richblack-800 text-richblack-100 py-[8px] px-[12px] rounded-[8px] border border-richblack-700">
               Sign up
             </button>
           </Link>
         )}
         {isLoggedin && (
           <Link to="/dashboard">
-            <button className="bg-richblack-800 text-richblack-100 py-[8px] px-[12px] rounded-[8px]border border-richblack-700">
+            <button className="bg-richblack-800 text-richblack-100 py-[8px] px-[12px] rounded-[8px] border border-richblack-700">
               dashboard
             </button>
           </Link>

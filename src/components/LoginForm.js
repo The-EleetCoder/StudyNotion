@@ -59,18 +59,29 @@ export const LoginForm = ({ setIsLoggedIn }) => {
           onChange={changeHandler}
           placeholder="Enter password"
           name="password"
-          className="rounded-[0.5rem] bg-richblack-800 text-richblack-5 w-full p-[12px] border-b"
+          className="rounded-[0.5rem] bg-richblack-800 text-richblack-5 w-full p-[12px] border-b pr-11"
         />
-        <span className="absolute right-3 top-[38px] cursor-pointer" onClick={() => setShowPassword((prev) => !prev)}>
-          {showPassword ? <AiOutlineEyeInvisible fontSize={24} fill="#AFB2BF" /> : <AiOutlineEye fontSize={24} fill="#AFB2BF"/>}
+        <span
+          className="absolute right-3 top-[38px] cursor-pointer"
+          onClick={() => setShowPassword((prev) => !prev)}
+        >
+          {showPassword ? (
+            <AiOutlineEyeInvisible fontSize={24} fill="#AFB2BF" />
+          ) : (
+            <AiOutlineEye fontSize={24} fill="#AFB2BF" />
+          )}
         </span>
 
         <Link to="#">
-          <p className="text-xs mt-1 text-blue-100 max-w-max ml-auto">Forgot Password</p>
+          <p className="text-xs mt-1 text-blue-100 max-w-max ml-auto">
+            Forgot Password
+          </p>
         </Link>
       </label>
 
-      <button className="bg-yellow-50 rounded-[8px] font-medium text-richblack-900 px-[12px] py-[8px] mt-6">Sign In</button>
+      <button className="bg-yellow-50 rounded-[8px] font-medium text-richblack-900 px-[12px] py-[8px] mt-6">
+        Sign In
+      </button>
     </form>
   );
 };
